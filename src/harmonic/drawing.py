@@ -17,7 +17,7 @@ def harmonic_cycle0(m, eigenvector, simplices, aggregation=None):
         idx_j.append(simplex.vertices[1])
 
     H[idx_i,idx_j] = np.abs(eigenvector)
-    H = H + H # symmetrize
+    H = H + H.T # symmetrize
 
     if aggregation=="sum":
         H = H.sum(axis=0)
